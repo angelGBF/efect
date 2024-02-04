@@ -1,0 +1,166 @@
+/* Estilos para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #030303;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos para las secciones */
+section {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+}
+
+/* Estilos para los títulos */
+h2 {
+  color: #ffffff;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los párrafos */
+p {
+  color: #fffdfd;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Estilos para las imágenes */
+img {
+  max-width: 100%;
+  width: 30%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+img{
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+
+.imagen-derecha{
+  align-items: flex-end;
+}
+
+.imagen-izquierda{
+  align-items: flex-start;
+}
+
+
+@keyframes showtexto {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+h2{
+  view-timeline-name: --texth2;
+  view-timeline-axis: block;
+  animation-timeline: --texth2;
+  animation-name: showtexto;
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+
+
+@keyframes showparrafo {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.parrafo_izquierda{
+  view-timeline-name: --textparrafo;
+  view-timeline-axis: block;
+  animation-timeline: --textparrafo;
+  animation-name: showparrafo;
+  animation-range: entry 25% cover 20%;
+  animation-fill-mode: both;
+}
+
+@keyframes showparrafoderecho {
+from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.parrafo_derecha{
+  view-timeline-name: --textparrafoderecho;
+  view-timeline-axis: block;
+  animation-timeline: --textparrafoderecho;
+  animation-name: showparrafoderecho;
+  animation-range: entry 25% cover 20%;
+  animation-fill-mode: both;
+  animation-duration: 3s; /* Cambia el valor a tu preferencia */
+}
+
+/* Estilos para las secciones con efecto de parallax */
+.parallax-section {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/fondo.png);
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
